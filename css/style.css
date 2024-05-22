@@ -2217,3 +2217,149 @@ img.left {
   margin-right: 10px; /* Adjust the spacing between the icon and the text */
   align-self: center;
 }
+
+/* COLLAPSIBLE */
+
+/* SVGs */
+
+/* slide SVG:
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM136 240h68c42 0 76 34 76 76s-34 76-76 76H160v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V368 264c0-13.3 10.7-24 24-24zm68 104c15.5 0 28-12.5 28-28s-12.5-28-28-28H160v56h44z"/></svg>
+
+video svg:
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg>
+
+audio svg:
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80C149.9 80 62.4 159.4 49.6 262c9.4-3.8 19.6-6 30.4-6c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48c-44.2 0-80-35.8-80-80V384 336 288C0 146.6 114.6 32 256 32s256 114.6 256 256v48 48 16c0 44.2-35.8 80-80 80c-26.5 0-48-21.5-48-48V304c0-26.5 21.5-48 48-48c10.8 0 21 2.1 30.4 6C449.6 159.4 362.1 80 256 80z"/></svg> */
+
+.collapsible-container {
+  margin: 30px auto;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  width: 90%;
+}
+
+.collapsible {
+  background-color: rgba(23, 23, 23, 0.85);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+}
+
+.collapsible::after {
+  content: "\02795";
+  font-size: 30px;
+  color: white;
+  margin-left: auto;
+}
+
+.coll-content {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  border: 2px solid black;
+}
+
+.active-coll,
+.collapsible:hover {
+  background-color: #679146;
+}
+
+.active-coll:after {
+  content: "\2796";
+}
+
+.content-wrapper {
+  height: auto;
+}
+
+/* TEXT CONTENT */
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.coll-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.coll-cell {
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+.coll-row svg {
+  height: 25px;
+}
+
+.slides-video-audio {
+  width: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.coll-cell.left {
+  flex: 3;
+}
+
+/* .coll-content {
+  flex: 0 0 500px;
+} */
+
+/*MOBILE - COLLAPSIBLE*/
+
+@media screen and (max-width: 1000px) {
+  .collapsible-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .collapsible-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .collapsible-container {
+    width: 320px;
+  }
+  .collapsible {
+    font-size: 20px;
+  }
+  .collapsible:after {
+    font-size: 20px;
+  }
+  .coll-content h4 {
+    margin-top: -5px;
+  }
+  .content-wrapper {
+    height: auto;
+  }
+  .content-wrapper > * {
+    max-width: 100%;
+  }
+  .text-content {
+    height: auto;
+  }
+  .slides-video-audio {
+    width: 15%;
+  }
+}
