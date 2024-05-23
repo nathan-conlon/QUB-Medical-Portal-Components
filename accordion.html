@@ -157,3 +157,19 @@
     </div>
   </div>
 </div>
+
+
+<!-- JS -->
+
+<script>
+document.querySelectorAll(".collapsible").forEach((coll) => {
+  coll.addEventListener("click", function () {
+    this.classList.toggle("active");
+    const content = this.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+    content.style.maxHeight =
+      content.style.display === "block" ? content.scrollHeight + "px" : null;
+  });
+});
+</script>
